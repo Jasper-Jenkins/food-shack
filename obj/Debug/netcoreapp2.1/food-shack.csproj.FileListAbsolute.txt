@@ -1,0 +1,14 @@
+C:\Users\Jasper\source\codeworks\C_SHARP\food-shack\bin\Debug\netcoreapp2.1\food-shack.deps.json
+C:\Users\Jasper\source\codeworks\C_SHARP\food-shack\bin\Debug\netcoreapp2.1\food-shack.runtimeconfig.json
+C:\Users\Jasper\source\codeworks\C_SHARP\food-shack\bin\Debug\netcoreapp2.1\food-shack.runtimeconfig.dev.json
+C:\Users\Jasper\source\codeworks\C_SHARP\food-shack\bin\Debug\netcoreapp2.1\food-shack.dll
+C:\Users\Jasper\source\codeworks\C_SHARP\food-shack\bin\Debug\netcoreapp2.1\food-shack.pdb
+C:\Users\Jasper\source\codeworks\C_SHARP\food-shack\obj\Debug\netcoreapp2.1\food-shack.csprojAssemblyReference.cache
+C:\Users\Jasper\source\codeworks\C_SHARP\food-shack\obj\Debug\netcoreapp2.1\food-shack.csproj.CoreCompileInputs.cache
+C:\Users\Jasper\source\codeworks\C_SHARP\food-shack\obj\Debug\netcoreapp2.1\food-shack.RazorAssemblyInfo.cache
+C:\Users\Jasper\source\codeworks\C_SHARP\food-shack\obj\Debug\netcoreapp2.1\food-shack.RazorAssemblyInfo.cs
+C:\Users\Jasper\source\codeworks\C_SHARP\food-shack\obj\Debug\netcoreapp2.1\food-shack.AssemblyInfoInputs.cache
+C:\Users\Jasper\source\codeworks\C_SHARP\food-shack\obj\Debug\netcoreapp2.1\food-shack.AssemblyInfo.cs
+C:\Users\Jasper\source\codeworks\C_SHARP\food-shack\obj\Debug\netcoreapp2.1\food-shack.RazorTargetAssemblyInfo.cache
+C:\Users\Jasper\source\codeworks\C_SHARP\food-shack\obj\Debug\netcoreapp2.1\food-shack.dll
+C:\Users\Jasper\source\codeworks\C_SHARP\food-shack\obj\Debug\netcoreapp2.1\food-shack.pdb
