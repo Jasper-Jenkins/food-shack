@@ -14,11 +14,15 @@ namespace food_shack
     public class Program
     {
         public static List<Smoothie> Smoothies = new List<Smoothie>(){
-            new Smoothie("Mango", 4.99m),
+            new Smoothie("Mango", 3.99m),
 
         };
-         public static List<Salad> Salads = new List<Salad>(){
-            new Salad("Italian", 4.99m),
+        public static List<Salad> Salads = new List<Salad>(){
+            new Salad("Italian", 2.99m),
+
+        };
+        public static List<Sandwich> Sandwiches = new List<Sandwich>(){
+            new Sandwich("BLT", 4.99m),
 
         };
         public static List<IPurchasable> MenuItems = new List<IPurchasable>();
@@ -30,6 +34,9 @@ namespace food_shack
             }
             for(var i = 0; i < Salads.Count; i++){
                 MenuItems.Add(Salads[i]);
+            }
+            for(var i = 0; i < Sandwiches.Count; i++){
+                MenuItems.Add(Sandwiches[i]);
             }
             //MenuItems.Add(Smoothies)
            // return MenuItems;

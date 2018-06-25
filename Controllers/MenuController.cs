@@ -18,15 +18,17 @@ namespace food_shack.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<IPurchasable>> Get()
         {
-
             return MenuItems;
         }
 
         // GET api/menu/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<IPurchasable> Get(int id)
         {
-            return "value";
+            if(id > -1 && id < MenuItems.Count){
+                return MenuItems[id];
+            }
+            return null;
         }
 
         // POST api/menu

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using food_shack.Models;
 
 namespace food_shack.Controllers
 {
@@ -10,24 +11,36 @@ namespace food_shack.Controllers
     [ApiController]
     public class SandwichesController : ControllerBase
     {
+        List<Sandwich> Sandwiches = Program.Sandwiches;
         // GET api/sandwich
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IEnumerable<Sandwich>> Get()
         {
-            return new string[] { "value1", "value2" };
+            
+            return Sandwiches;
         }
 
         // GET api/sandwich/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<Sandwich> Get(int id)
         {
-            return "value";
+            
+            if(id > -1 && id < Sandwiches.Count){
+                return Sandwiches[id];
+            }
+            return null;
         }
 
         // POST api/sandwich
         [HttpPost]
-        public void Post([FromBody] string value)
+        public ActionResult<List<Sandwich>> Post([FromBody]Sandwich newSandwich)
         {
+            if (ModelState.IsValid)
+            {
+                Sandwiches.Add(newSandwich);
+                return Sandwiches;
+            }
+            return null;
         }
 
         // PUT api/sandwich/5

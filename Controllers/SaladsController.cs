@@ -16,20 +16,31 @@ namespace food_shack.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Salad>> Get()
         {
+            
             return Salads;
         }
 
         // GET api/salad/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<Salad> Get(int id)
         {
-            return "value";
+            
+            if(id > -1 && id < Salads.Count){
+                return Salads[id];
+            }
+            return null;
         }
 
         // POST api/salad
         [HttpPost]
-        public void Post([FromBody] string value)
+        public ActionResult<List<Salad>> Post([FromBody]Salad newSalad)
         {
+            if (ModelState.IsValid)
+            {
+                Salads.Add(newSalad);
+                return Salads;
+            }
+            return null;
         }
 
         // PUT api/salad/5

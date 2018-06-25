@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using food_shack.Models;
+
 namespace food_shack.Controllers
 {
     [Route("api/[controller]")]
@@ -11,28 +12,35 @@ namespace food_shack.Controllers
     public class SmoothiesController : ControllerBase
     {
         List<Smoothie> Smoothies = Program.Smoothies;
-       
         // GET api/smoothie
         [HttpGet]
         public ActionResult<IEnumerable<Smoothie>> Get()
         {
-            // for(int i =0; i< Smoothie.Count; i++){
-                
-            // }
-    
-             return Smoothies;
-        } 
+            
+            return Smoothies;
+        }
+
         // GET api/smoothie/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<Smoothie> Get(int id)
         {
-            return "value";
+            
+            if(id > -1 && id < Smoothies.Count){
+                return Smoothies[id];
+            }
+            return null;
         }
 
         // POST api/smoothie
         [HttpPost]
-        public void Post([FromBody] string value)
+        public ActionResult<List<Smoothie>> Post([FromBody]Smoothie newSmoothie)
         {
+            if (ModelState.IsValid)
+            {
+                Smoothies.Add(newSmoothie);
+                return Smoothies;
+            }
+            return null;
         }
 
         // PUT api/smoothie/5
