@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using food_shack.Models;
+using food_shack.Repositories;
 
 namespace food_shack.Controllers
 {
@@ -11,45 +12,46 @@ namespace food_shack.Controllers
     [ApiController]
     public class SandwichesController : ControllerBase
     {
-        List<Sandwich> Sandwiches = Program.Sandwiches;
-        // GET api/sandwich
+        // List<Sandwich> Sandwiches = Program.Sandwiches;
+        
+        private readonly SandwichRepository db;
+        public SandwichesController(SandwichRepository repo)
+        {
+            db = repo;
+        }
+
+        // GET api/sandwiches
         [HttpGet]
-        public ActionResult<IEnumerable<Sandwich>> Get()
+        public IEnumerable<Sandwich> Get()
         {
-            
-            return Sandwiches;
+            return db.GetAll();
         }
 
-        // GET api/sandwich/5
+        // GET api/sandwiches/5
         [HttpGet("{id}")]
-        public ActionResult<Sandwich> Get(int id)
+        public Sandwich Get(int id)
         {
-            
-            if(id > -1 && id < Sandwiches.Count){
-                return Sandwiches[id];
-            }
-            return null;
+            return db.GetById(id);
         }
 
-        // POST api/sandwich
+        // POST api/sandwiches
         [HttpPost]
-        public ActionResult<List<Sandwich>> Post([FromBody]Sandwich newSandwich)
+        public Sandwich Post([FromBody]Sandwich newSandwich)
         {
             if (ModelState.IsValid)
             {
-                Sandwiches.Add(newSandwich);
-                return Sandwiches;
+                return db.AddSandwich(newSandwich);
             }
             return null;
         }
 
-        // PUT api/sandwich/5
+        // PUT api/sandwiches/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE api/sandwich/5
+        // DELETE api/sandwiches/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

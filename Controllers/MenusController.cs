@@ -10,47 +10,47 @@ namespace food_shack.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SaladsController : ControllerBase
+    public class MenusController : ControllerBase
     {
-        // List<Salad> Salads = Program.Salads;
+        // List<Menu> Menus = Program.Menus;
     
-        private readonly SaladRepository db;
-        public SaladsController(SaladRepository repo)
+        private readonly MenuRepository db;
+        public MenusController(MenuRepository repo)
         {
         }
 
-        // GET api/smoothies
+        // GET api/menus
         [HttpGet]
-        public IEnumerable<Salad> Get()
+        public IEnumerable<Menu> Get()
         {
             return db.GetAll();
         }
 
-        // GET api/smoothies/5
+        // GET api/menus/5
         [HttpGet("{id}")]
-        public Salad Get(int id)
+        public Menu Get(int id)
         {
             return db.GetById(id);
         }
 
-        // POST api/smoothies
+        // POST api/menus
         [HttpPost]
-        public Salad Post([FromBody]Salad newSalad)
+        public Menu Post([FromBody]Menu newMenu)
         {
             if (ModelState.IsValid)
             {
-                return db.AddSalad(newSalad);
+                return db.AddMenu(newMenu);
             }
             return null;
         }
 
-        // PUT api/smoothies/5
+        // PUT api/menus/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE api/smoothies/5
+        // DELETE api/menus/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

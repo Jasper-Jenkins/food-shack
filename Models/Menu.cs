@@ -6,26 +6,29 @@ namespace food_shack.Models
 {
     public class Menu
     {
+        public int Id {get;set;}
         public string Title { get; set; }
+
+        public string Description {get;set;}
         public List<Sandwich> Sandwiches {set; get;}
         public List<Smoothie> Smoothies {set; get;}
         public List<Salad> Salads {set; get;}
         
     //    public List<MenuItems> MenuItems {get;set;}
-        public Menu(string title){
-            Title = title;
-            Sandwiches = new List<Sandwich>();
-            Smoothies = new List<Smoothie>();
-            Salads = new List<Salad>();
-          //  MenuItems = new List<MenuItems>();
+        // public Menu(string title){
+        //     Title = title;
+        //     Sandwiches = new List<Sandwich>();
+        //     Smoothies = new List<Smoothie>();
+        //     Salads = new List<Salad>();
+        //   //  MenuItems = new List<MenuItems>();
 
 
-            // Sandwich italian = new Sandwich("Italian", 3.99m);
-            // Smoothie mango = new Smoothie("Mango", 2.99m);
-            // Salad cesear = new Salad("Cesear", 2.99m);
+        //     // Sandwich italian = new Sandwich("Italian", 3.99m);
+        //     // Smoothie mango = new Smoothie("Mango", 2.99m);
+        //     // Salad cesear = new Salad("Cesear", 2.99m);
 
 
-        }
+        // }
 
 
         // public static List<Smoothie> Smoothiess = new List<Smoothie>(){
